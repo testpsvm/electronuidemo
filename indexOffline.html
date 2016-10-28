@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <script>
+    const {ipcRenderer} = require('electron')
+    const updateOnlineStatus = () => {
+      ipcRenderer.send('online-status-changed', navigator.onLine ? 'online' : 'offline')
+    }
+
+    window.addEventListener('online',  updateOnlineStatus)
+    window.addEventListener('offline',  updateOnlineStatus)
+
+  </script>
+
+<script>
+  localStorage.setItem("userId", "login");
+  localStorage.setItem("data", "MyData");
+
+</script>
+
+Application deconnectee
+
+</body>
+</html>
